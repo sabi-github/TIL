@@ -12,9 +12,9 @@
 가장 빠르게 증가하는 항만을 고려하는 표기법 <br>
 ex) 연산 횟수가 3N^3 + 5N^2 + 100000 인 알고리즘이 있다면
 Big-O로 O(N^3)으로 표현한다.<br>
-예에서 봤듯이 가장 큰 차수만 쓰고 앞에 있는 계수는 무시한다.
+예에서 봤듯이 가장 큰 차수만 쓰고 앞에 있는 계수는 무시한다. <br>
 
-
+<img src="https://github.com/LPIGEON/TIL/blob/main/image/2022-04-13%2020-29-44.png"></img>
 
 ### 참고자료
 <a href> https://www.youtube.com/watch?v=m-9pAwq1o3w&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC </a>
