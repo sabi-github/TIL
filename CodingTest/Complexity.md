@@ -13,3 +13,8 @@
 ex) 연산 횟수가 3N^3 + 5N^2 + 100000 인 알고리즘이 있다면
 Big-O로 O(N^3)으로 표현한다.<br>
 예에서 봤듯이 가장 큰 차수만 쓰고 앞에 있는 계수는 무시한다.
+
+
+
+### 참고자료
+<a href> https://www.youtube.com/watch?v=m-9pAwq1o3w&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC </a>
