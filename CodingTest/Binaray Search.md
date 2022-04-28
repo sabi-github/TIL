@@ -1,4 +1,4 @@
-## Binaray Search
+# Binaray Search
 어떠한 값을 찾고 싶은데 그 값을 가지고 있는 배열의 수가 많으면 어떻게 될까? <br>
 제일 먼저 시도하는 방법은 선형(Linear) 알고리즘일것이다. <br>
 10개의 배열이 있다면 제일 처음 0부터 9까지 차례대로 탐색하는 방법이다. 제일 쉬운 방법이지만 제일 멍청한 방법이기도 하다. <br>
@@ -21,7 +21,8 @@
 위에 2, 3 번이 이진 탐색의 핵심이다. 위에서 이진탐색을 사용하기 위해선 반드시 배열의 정렬이 필수라고 했던 이유를 알겠는가? <br>
 만약 정렬되어 있지 않으면 우리는 필요없는 배열의 반을 또 찾아야 할 것이기 떄문이다.<br>
 
-<img src=https://github.com/sabi-github/TIL/blob/main/image/2022-04-27%2020-51-53.png>
+<p align="center"><img src="https://github.com/sabi-github/TIL/blob/main/image/2022-04-27%2020-51-53.png" height="300px" width="300px">
+</p>
 
 ## Benefit of Binary Search 
 그렇다면 왜 이진 탐색이 선형 탐색보다 좋을까? 
@@ -32,7 +33,7 @@
 선형 탐색에 비해 압도적인 차이가 난다는 것을 확인할 수 있다.
 
 ## Code
-### 비재귀적 python code
+비재귀적 Python
 ```python
 def binary_search (arr, val):
     first, last = 0, arr.len()
@@ -43,7 +44,7 @@ def binary_search (arr, val):
         else: first = mid+1
     return -1
 ```
-### 재귀적 python code
+재귀적 Python
 ```python
 def binary_search_recursion (target, start, end, data):
     if start > end:
@@ -57,3 +58,37 @@ def binary_search_recursion (target, start, end, data):
         start = mid + 1        
     return binary_search_recursion(target, start, end, data)
 ```
+반복 C++
+```cpp
+// 이진 탐색 소스코드 구현(반복문)
+int binarySearch(vector<int>& arr, int target, int start, int end) {
+    while (start <= end) {
+        int mid = (start + end) / 2;
+        // 찾은 경우 중간점 인덱스 반환
+        if (arr[mid] == target) return mid;
+        // 중간점의 값보다 찾고자 하는 값이 작은 경우 왼쪽 확인
+        else if (arr[mid] > target) end = mid - 1;
+        // 중간점의 값보다 찾고자 하는 값이 큰 경우 오른쪽 확인
+        else start = mid + 1; 
+    }
+    return -1;
+}
+```
+
+재귀적 C++
+```cpp
+// 이진 탐색 소스코드 구현(재귀 함수)
+int binarySearch(vector<int>& arr, int target, int start, int end) {
+    if (start > end) return -1;
+    int mid = (start + end) / 2;
+    // 찾은 경우 중간점 인덱스 반환
+    if (arr[mid] == target) return mid;
+    // 중간점의 값보다 찾고자 하는 값이 작은 경우 왼쪽 확인
+    else if (arr[mid] > target) return binarySearch(arr, target, start, mid - 1);
+    // 중간점의 값보다 찾고자 하는 값이 큰 경우 오른쪽 확인
+    else return binarySearch(arr, target, mid + 1, end);
+}
+```
+
+### 참고
+* https://github.com/ndb796/python-for-coding-test
